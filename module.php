@@ -90,7 +90,7 @@ class IPS_Tasmota extends TasmotaService
             $this->SendDebug('ReceiveData JSON', $JSONString, 0);
             $data = json_decode($JSONString);
             // Buffer decodieren und in eine Variable schreiben
-            $Buffer = json_decode($data->Buffer);
+            /*$Buffer = json_decode($data->Buffer);
             $this->SendDebug('Topic', $Buffer->TOPIC, 0);
             $off = $this->ReadPropertyString('Off');
             $on = $this->ReadPropertyString('On');
@@ -101,10 +101,10 @@ class IPS_Tasmota extends TasmotaService
                 $MSG = json_decode($Buffer->MSG);
                 if (property_exists($MSG, 'PowerOnState')) {
                     $this->setPowerOnStateInForm($MSG->PowerOnState);
-                }
+                }*/
             }
             //Power Vairablen checken
-            if (property_exists($Buffer, 'TOPIC')) {
+            /*if (property_exists($Buffer, 'TOPIC')) {
                 if (fnmatch('*POWER*', $Buffer->TOPIC)) {
                     $this->SendDebug('Power Topic', $Buffer->TOPIC, 0);
                     $this->SendDebug('Power', $Buffer->MSG, 0);
@@ -150,9 +150,9 @@ class IPS_Tasmota extends TasmotaService
                     $myBuffer = json_decode($Buffer->MSG, true);
                     $this->traverseArray($myBuffer, $myBuffer);
                 }
-            }
+            }*/
             //POW Variablen
-            if (fnmatch('*ENERGY*', $Buffer->MSG)) {
+            /*if (fnmatch('*ENERGY*', $Buffer->MSG)) {
                 $myBuffer = json_decode($Buffer->MSG);
                 if (property_exists($myBuffer, 'ENERGY')) {
                     $this->Debug('ENERGY MSG', $Buffer->MSG, 'Pow');
@@ -171,7 +171,7 @@ class IPS_Tasmota extends TasmotaService
                     SetValue($this->GetIDForIdent('Tasmota_POWVoltage'), $myBuffer->ENERGY->Voltage);
                     SetValue($this->GetIDForIdent('Tasmota_POWFactor'), $myBuffer->ENERGY->Factor);
                 }
-            }
+            }*/
         }
     }
     public function RequestAction($Ident, $Value)
