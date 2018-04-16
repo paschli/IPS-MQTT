@@ -1,11 +1,11 @@
 {
 	"id": "{030f3cdb-a9bb-4fe9-b9e4-8a3a37fdcd60}",
-	"name": "IPS_Tasmota",
+	"name": "IPS-MQTT",
 	"type": 3,
 	"vendor": "",
-	"aliases": ["IPS_Tasmota"],
+	"aliases": ["IPS-MQTT"],
 	"parentRequirements": ["{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}"],
 	"childRequirements": [],
 	"implemented": ["{018EF6B5-AB94-40C6-AA53-46943E824ACF}"],
-	"prefix": "Tasmota"
+	"prefix": "MQTT"
 }
